@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Portal</title>
+  <style>
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    body {
+      
+      font-family: Arial, sans-serif;
+      background-color: #eef6f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    label {
+      margin-top: 15px;
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: rgb(20, 72, 51);
+    }
+
+    .tab-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .tab-btn {
+      width: 120px;
+      padding: 10px;
+      background-color: #d8f3dc;
+      border: 1px solid #95d5b2;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .active {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    .form-container {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <video class="video-bg" autoplay muted loop>
+    <source src="static/grass.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+<header>
+  <h1>Customer Portal</h1>
+</header>
+
+<main>
+  <div class="tab-container">
+    <div class="tab-btn active" onclick="switchTab('register')">Register</div>
+    <div class="tab-btn" onclick="switchTab('login')">Login</div>
+  </div>
+
+  <!-- Registration -->
+  <div id="register" class="form-container visible">
+    <h2>Register</h2>
+    <label for="first">First Name</label>
+    <input type="text" id="first" placeholder="Enter first name">
+
+    <label for="last">Last Name</label>
+    <input type="text" id="last" placeholder="Enter last name">
+
+    <label for="reg-phone">Phone Number</label>
+    <input type="text" id="reg-phone" placeholder="Enter 10-digit phone">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <label for="repassword">Re-enter Password</label>
+    <input type="password" id="repassword" placeholder="Re-enter password">
+
+    <button class="btn" onclick="registerUser()">Register</button>
+  </div>
+
+  <!-- Login -->
+  <div id="login" class="form-container">
+    <h2>Login</h2>
+    <label for="login-phone">Phone Number</label>
+    <input type="text" id="login-phone" placeholder="Enter 10-digit phone">
+
+    <label for="login-password">Password</label>
+    <input type="password" id="login-password" placeholder="Enter password">
+
+    <button class="btn" onclick="loginUser()">Login</button>
+  </div>
+</main>
+
+<script>
+  function switchTab(tab) {
+    document.getElementById("register").classList.remove("visible");
+    document.getElementById("login").classList.remove("visible");
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tab).classList.add("visible");
+    document.querySelectorAll('.tab-btn')[tab === 'register' ? 0 : 1].classList.add('active');
+  }
+
+  async function registerUser() {
+    const first = document.getElementById("first").value.trim();
+    const last = document.getElementById("last").value.trim();
+    const phone = document.getElementById("reg-phone").value.trim();
+    const password = document.getElementById("password").value;
+    const repassword = document.getElementById("repassword").value;
+
+    if (!first || !last || !phone || !password || !repassword) {
+      return alert("Please fill in all fields.");
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      return alert("Invalid phone number.");
+    }
+
+    if (password !== repassword) {
+      return alert("Passwords do not match.");
+    }
+
+    try {
+      const res = await fetch("/send_otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone })
+      });
+
+      const data = await res.json();
+      if (!data.success) return alert("❌ Failed to send OTP: " + (data.error || ""));
+
+      const otp = prompt(`✅ OTP sent to ${phone}. Enter it to continue:`);
+      if (!otp) return alert("OTP not entered.");
+
+      const verifyRes = await fetch("/verify_otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone, otp })
+      });
+
+      const result = await verifyRes.json();
+      if (!result.verified) return alert("❌ Invalid OTP.");
+
+      const registerRes = await fetch("/register_customer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ first, last, phone, password })
+      });
+
+      const registerData = await registerRes.json();
+      if (registerData.success) {
+        alert("🎉 Registered successfully!");
+        switchTab("login");
+      } else {
+        alert("❌ " + registerData.error);
+      }
+    } catch (err) {
+      alert("❌ Error: " + err.message);
+    }
+  }
+
+  async function loginUser() {
+    const phone = document.getElementById("login-phone").value.trim();
+    const password = document.getElementById("login-password").value;
+
+    if (!/^\d{10}$/.test(phone)) return alert("Please enter a valid 10-digit phone number.");
+    if (!password) return alert("Please enter your password.");
+
+    try {
+      const res = await fetch("/login_customer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone, password })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        alert("✅ Logged in successfully!");
+      } else {
+        alert("❌ " + (data.error || "Login failed"));
+      }
+    } catch (err) {
+      alert("❌ Error: " + err.message);
+    }
+  }
+</script>
+
+</body>
+</html>

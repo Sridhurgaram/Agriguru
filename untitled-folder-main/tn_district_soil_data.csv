@@ -1,0 +1,36 @@
+District,Soil_Type,pH,N,P,K
+Chennai,Red Sandy Loam,6.2,Low,Low,Low
+Kanchipuram,Red Loam,6.3,Medium,Medium,Low
+Tiruvallur,Red Sandy Loam,6.2,Low,Low,Low
+Vellore,Red Loam,6.3,Medium,Medium,Low
+Ranipet,Red Loam,6.4,Medium,Medium,Low
+Tiruvannamalai,Red Loam,6.4,Medium,Medium,Low
+Villupuram,Red Sandy Loam,6.1,Low,Low,Low
+Cuddalore,Alluvial,6.7,High,High,Medium
+Pondicherry,Alluvial,6.6,High,High,Medium
+Thanjavur,Alluvial,6.8,High,High,Medium
+Tiruvarur,Alluvial,6.8,High,High,Medium
+Nagapattinam,Alluvial,6.7,High,High,Medium
+Trichy,Alluvial,6.8,High,High,Medium
+Karur,Red Loam,6.5,Medium,Medium,Medium
+Ariyalur,Red Loam,6.6,Medium,Medium,Medium
+Perambalur,Red Sandy,6.3,Low,Low,Low
+Namakkal,Red Loam,6.5,Medium,Medium,Low
+Salem,Red Loam,6.5,Medium,Medium,High
+Dharmapuri,Red Loam,6.4,Medium,Medium,Low
+Krishnagiri,Red Loam,6.4,Medium,Medium,Low
+Erode,Red Sandy,6.2,Low,Low,Low
+Coimbatore,Laterite,5.8,Low,Low,Low
+Tiruppur,Red Sandy,6.1,Low,Low,Low
+Dindigul,Black Soil,7.0,High,High,High
+Madurai,Black Soil,7.1,High,High,Medium
+Sivagangai,Red Sandy,6.1,Low,Low,Low
+Ramanathapuram,Red Sandy,6.1,Low,Low,Low
+Virudhunagar,Red Sandy,6.1,Low,Low,Low
+Thoothukudi,Red Sandy,6.1,Low,Low,Low
+Tirunelveli,Black Soil,7.0,High,High,High
+Thoothukudi,Red Sandy,6.1,Low,Low,Low
+Krishnagiri,Red Loam,6.4,Medium,Medium,Low
+Nilgiris,Laterite,5.7,Low,Low,Low
+Kanyakumari,Laterite,5.8,Low,Low,Low
+Mayiladuthurai,Alluvial,6.7,High,High,Medium

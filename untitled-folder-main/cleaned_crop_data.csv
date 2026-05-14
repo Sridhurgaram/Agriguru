@@ -1,0 +1,71 @@
+Crop,Temperature,Humidity,Rainfall
+Paddy (Rice),30.0,72.5,108.0
+Millet,30.0,50.0,58.0
+Cotton,25.5,55.0,50.0
+Sugarcane,30.5,80.0,166.5
+Groundnut,30.0,65.0,62.5
+Turmeric,25.0,80.0,146.0
+Maize,26.0,70.0,54.5
+Wheat,20.0,50.0,33.5
+Banana,28.0,85.0,125.0
+Chilli,25.0,60.0,62.5
+Brinjal (Eggplant),30.0,70.0,58.5
+Tomato,25.0,65.0,58.5
+Onion,25.0,55.0,41.5
+Garlic,20.0,65.0,41.5
+Tapioca,30.0,80.0,91.5
+Black Gram,30.0,70.0,50.0
+Green Gram (Moong),28.5,65.0,58.5
+Soybean,29.0,65.0,56.5
+Sesame,25.0,50.0,37.5
+Castor,30.0,50.0,41.5
+Sunflower,22.5,60.0,75.0
+Coriander,23.5,55.0,54.5
+Cumin,25.0,45.0,25.0
+Bajra (Pearl Millet),30.0,,58.0
+Ragi (Finger Millet),25.0,,62.5
+Horsegram,25.0,55.0,37.5
+Cowpea,28.0,60.0,48.0
+Sweet Potato,25.5,70.0,81.5
+Carrot,20.0,65.0,58.5
+Beans,25.0,65.0,54.5
+Mango,27.0,55.0,135.5
+Guava,26.5,70.0,125.0
+Sapota (Chikoo),28.5,75.0,104.0
+Coconut,29.5,80.0,166.5
+Cashew,26.0,65.0,125.0
+Pineapple,27.0,77.5,104.0
+Papaya,30.0,70.0,125.0
+Lemon,27.5,65.0,81.5
+Orange,25.0,60.0,73.0
+Grapes,30.0,50.0,50.0
+Pomegranate,30.0,50.0,54.5
+Jackfruit,30.0,75.0,141.5
+Drumstick,30.0,50.0,62.5
+Cabbage,17.5,65.0,50.0
+Cauliflower,20.0,65.0,54.5
+Potato,17.5,67.5,58.5
+Beetroot,20.0,60.0,54.5
+Radish,20.0,65.0,41.5
+Cucumber,25.0,70.0,66.5
+Pumpkin,27.5,70.0,66.5
+Bitter Gourd,30.0,65.0,58.5
+Snake Gourd,27.5,65.0,58.5
+Ash Gourd,27.5,65.0,58.5
+Bottle Gourd,30.0,65.0,50.0
+Ridge Gourd,27.5,65.0,58.5
+Cluster Beans,30.0,55.0,41.5
+Lady’s Finger (Okra),30.0,65.0,50.0
+Peas,20.0,65.0,41.5
+Fenugreek,25.0,60.0,41.5
+Mint,25.0,75.0,75.0
+Tea,24.0,82.5,166.5
+Coffee,21.5,75.0,146.0
+Rubber,30.0,85.0,208.5
+Pepper,25.0,80.0,208.5
+Cardamom,23.0,85.0,187.5
+Cinnamon,27.5,80.0,135.5
+Vanilla,25.0,85.0,166.5
+Jasmine,25.0,70.0,83.5
+Marigold,24.0,60.0,66.5
+Chrysanthemum,20.0,60.0,62.5

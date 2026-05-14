@@ -1,0 +1,71 @@
+Crop,Soil_Type,pH_min,pH_max,N,P,K
+Paddy,Alluvial,6,7.5,High,Medium,High
+Millet,Red Sandy,5.5,7,Low,Low,Low
+Cotton,Black Soil,6.5,8,High,High,High
+Sugarcane,Alluvial,6.5,7.5,High,High,High
+Groundnut,Red Loam,6,7,Medium,Medium,High
+Turmeric,Laterite,5.5,6.5,Low,Low,Medium
+Maize,Red Loam,5.8,7,Medium,Medium,Medium
+Wheat,Alluvial,6,7.5,High,High,High
+Banana,Alluvial,6,7.5,High,Medium,High
+Chilli,Red Sandy,5.5,6.5,Medium,Medium,High
+Brinjal,Alluvial,5.5,7,Medium,Medium,Medium
+Tomato,Alluvial,5.5,7,Medium,High,Medium
+Onion,Alluvial,6,7.5,Medium,High,Medium
+Garlic,Alluvial,6,7.5,Medium,Medium,Medium
+Tapioca,Laterite,5,6.5,Medium,Low,Low
+Black Gram,Black Soil,6,7.5,Medium,Medium,High
+Green Gram,Red Sandy,5.5,7,Low,Low,Low
+Soybean,Black Soil,6,7.5,Medium,Medium,Medium
+Sesame,Red Sandy,5.5,7,Low,Low,Low
+Castor,Red Sandy,5.5,6.5,Medium,Medium,Medium
+Sunflower,Red Sandy,6,7,Medium,Medium,High
+Coriander,Red Loam,6,7,Medium,Medium,Medium
+Cumin,Red Sandy,6,7,Low,Low,Low
+Bajra,Red Sandy,5,7,Low,Low,Low
+Ragi,Red Sandy,5.5,7,Low,Low,Low
+Horsegram,Red Sandy,5.5,7,Low,Low,Low
+Cowpea,Red Loam,5.5,7,Low,Medium,Medium
+Sweet Potato,Laterite,5.5,6.5,Low,Low,Low
+Carrot,Red Sandy,5.5,6.5,Medium,Medium,Medium
+Beans,Alluvial,5.5,7,Medium,Medium,Medium
+Mango,Red Loam,6,7.5,Medium,Medium,High
+Guava,Sandy Loam,6,7.5,Medium,Medium,Medium
+Sapota,Sandy Loam,6,8,Medium,Medium,Medium
+Coconut,Sandy Coastal,5,8,High,Medium,High
+Cashew,Laterite,5,7,Medium,Medium,Medium
+Pineapple,Laterite,4.5,6,Medium,Medium,Medium
+Papaya,Alluvial,6,7,High,Medium,High
+Lemon,Red Loam,5.5,7.5,Medium,Medium,Medium
+Orange,Red Loam,6,7.5,Medium,Medium,Medium
+Grapes,Alluvial,6.5,7.5,High,High,High
+Pomegranate,Red Sandy,5.5,7.5,Medium,Medium,Medium
+Jackfruit,Red Loam,6,7.5,Medium,Medium,Medium
+Drumstick,Red Sandy,6,7,Medium,Medium,Medium
+Cabbage,Clay Loam,6,6.8,High,High,High
+Cauliflower,Clay Loam,6,6.8,High,High,High
+Potato,Sandy Loam,5,6.5,High,High,High
+Beetroot,Loamy Sand,6,7.5,Medium,Medium,Medium
+Radish,Sandy Loam,6,7,Medium,Medium,Medium
+Cucumber,Loamy Sand,6,7,Medium,Medium,Medium
+Pumpkin,Loamy Sand,6,7,Medium,Medium,Medium
+Bitter Gourd,Loamy Sand,6,7,Medium,Medium,Medium
+Snake Gourd,Loamy Sand,6,7,Medium,Medium,Medium
+Ash Gourd,Loamy Sand,6,7,Medium,Medium,Medium
+Bottle Gourd,Loamy Sand,6,7,Medium,Medium,Medium
+Ridge Gourd,Loamy Sand,6,7,Medium,Medium,Medium
+Cluster Beans,Sandy Loam,6,7.5,Medium,Medium,Medium
+Lady's Finger,Well-Drained Loam,6,7,Medium,Medium,Medium
+Peas,Alluvial,6,7.5,Medium,Medium,Medium
+Fenugreek,Red Sandy,6,7,Low,Low,Low
+Mint,Alluvial,6,7.5,High,High,High
+Tea,Forest Loam,4.5,5.5,High,High,High
+Coffee,Volcanic Red Loam,5,6.5,High,High,High
+Rubber,Laterite,4.5,6,High,High,High
+Pepper,Forest Loam,5,6.5,High,High,High
+Cardamom,Forest Loam,5,6.5,High,High,High
+Cinnamon,Forest Loam,5,6.5,High,High,High
+Vanilla,Forest Loam,5,6.5,High,High,High
+Jasmine,Sandy Loam,6,7.5,Medium,Medium,Medium
+Marigold,Sandy Loam,6,7.5,Medium,Medium,Medium
+Chrysanthemum,Sandy Loam,6,7.5,Medium,Medium,Medium

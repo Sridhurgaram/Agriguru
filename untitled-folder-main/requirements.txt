@@ -1,0 +1,11 @@
+pandas
+numpy
+lightgbm
+scikit-learn
+requests
+joblib
+fuzzywuzzy
+python-Levenshtein
+flask
+Flask
+geopy

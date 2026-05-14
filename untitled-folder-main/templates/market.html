@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Market - AgriGuru</title>
+  <style>
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0faff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #1565c0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1em;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn.farmer {
+      background: #43a047;
+    }
+
+    .btn.farmer:hover {
+      background: #2e7d32;
+    }
+
+    .btn.customer {
+      background: #0288d1;
+    }
+
+    .btn.customer:hover {
+      background: #0277bd;
+    }
+  </style>
+</head>
+<body>
+
+     <video class="video-bg" autoplay muted loop>
+    <source src="static/grass.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <h1>AgriGuru Market</h1>
+    <p>Choose your role</p>
+    <button class="btn farmer" onclick="location.href='farmer'">Farmer</button>
+    <button class="btn customer" onclick="location.href='customer'">Customer</button>
+  </div>
+</body>
+</html>
