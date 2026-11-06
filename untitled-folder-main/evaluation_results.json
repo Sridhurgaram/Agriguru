@@ -1,0 +1,25 @@
+{
+  "model_type": "LightGBM Multi-Class Classifier",
+  "classes_count": 70,
+  "training_samples": 2800,
+  "test_samples": 700,
+  "features": [
+    "Temperature",
+    "Humidity",
+    "Rainfall",
+    "Soil_Type_Enc",
+    "pH",
+    "N",
+    "P",
+    "K"
+  ],
+  "test_accuracy": 86.57,
+  "test_precision": 87.55,
+  "test_recall": 86.57,
+  "test_f1_macro": 0.8643,
+  "test_f1_weighted": 0.8643,
+  "cv_5fold_accuracy_mean": 84.97,
+  "cv_5fold_accuracy_std": 1.04,
+  "cv_5fold_f1_mean": 0.8492,
+  "evaluated_at": "C:\\Users\\sridh\\Downloads\\untitled-folder-main\\untitled-folder-main"
+}

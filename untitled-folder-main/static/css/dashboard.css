@@ -1,0 +1,593 @@
+/* ==========================================================================
+   AgriGuru Modern Agricultural Advisory Dashboard Stylesheet
+   Theme: Nature Green, Agronomic Clarity, Mobile-Responsive
+   ========================================================================== */
+
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: #4caf50;
+  --primary-soft: #e8f5e9;
+  --accent: #f57f17;
+  --accent-light: #fff9c4;
+  --danger: #c62828;
+  --danger-soft: #ffebee;
+  --info: #0288d1;
+  --info-soft: #e1f5fe;
+  --warning: #ef6c00;
+  --warning-soft: #fff3e0;
+  --card-bg: #ffffff;
+  --text-main: #212529;
+  --text-muted: #616161;
+  --border-color: #e0e0e0;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f4fbf7;
+  color: var(--text-main);
+  line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+/* Background video */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.15;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(244, 251, 247, 0.88);
+  z-index: -1;
+}
+
+/* Header */
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  background: white;
+}
+
+.brand-title h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.brand-title p {
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Container */
+.dashboard-container {
+  max-width: 1240px;
+  margin: 25px auto;
+  padding: 0 16px;
+}
+
+/* Setup Card */
+.setup-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  transition: border-color 0.2s;
+  background-color: #fafafa;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+.action-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+}
+
+.btn-secondary {
+  background: #eceff1;
+  color: #37474f;
+}
+
+.btn-secondary:hover {
+  background: #cfd8dc;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary-soft);
+}
+
+/* Toggle custom soil */
+.soil-toggle-box {
+  margin-top: 14px;
+  padding: 12px;
+  background: #f9fbe7;
+  border: 1px dashed #c0ca33;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.soil-inputs-collapsible {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Loading & Status */
+.loading-indicator {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e0e0e0;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Grid Sections */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-8 { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+@media (max-width: 992px) {
+  .col-4, .col-6, .col-8 {
+    grid-column: span 12;
+  }
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #263238;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.badge-live {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.badge-fallback {
+  background: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffcc80;
+}
+
+.badge-info {
+  background: #e1f5fe;
+  color: #0277bd;
+}
+
+/* Weather Stats */
+.weather-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.weather-temp-large {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1b5e20;
+}
+
+.weather-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #f8fbf9;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+}
+
+.metric-item {
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #37474f;
+}
+
+/* Climate Insights Alerts */
+.insight-alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+
+.insight-warning {
+  background: #fff3e0;
+  border-left: 4px solid var(--warning);
+  color: #e65100;
+}
+
+.insight-alert-danger {
+  background: #ffebee;
+  border-left: 4px solid var(--danger);
+  color: #c62828;
+}
+
+.insight-info {
+  background: #e8f5e9;
+  border-left: 4px solid var(--primary);
+  color: #1b5e20;
+}
+
+/* Crop Recommendation Cards */
+.crop-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: grid;
+  grid-template-columns: 80px 1fr 240px;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .crop-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.crop-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.crop-rank-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.crop-rank-number {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.crop-rank-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.crop-details h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 2px;
+}
+
+.crop-tamil-name {
+  font-size: 0.9rem;
+  color: #558b2f;
+  margin-bottom: 8px;
+}
+
+.crop-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tag-compat {
+  font-size: 0.75rem;
+  background: #f1f8e9;
+  color: #33691e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.crop-reasons-list {
+  font-size: 0.82rem;
+  color: #424242;
+  list-style: none;
+}
+
+.crop-reasons-list li::before {
+  content: "✔ ";
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.crop-financials-box {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .crop-financials-box {
+    text-align: left;
+  }
+}
+
+.financial-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.financial-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+.financial-roi {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e65100;
+}
+
+/* Charts container */
+.chart-container {
+  position: relative;
+  height: 280px;
+  width: 100%;
+}
+
+/* Irrigation Alert Box */
+.irrigation-box {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.irrigation-icon {
+  font-size: 1.8rem;
+}
+
+.irrigation-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.irrigation-content p {
+  font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}

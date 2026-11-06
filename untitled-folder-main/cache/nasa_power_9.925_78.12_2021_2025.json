@@ -1,0 +1,175 @@
+{
+  "source": "NASA POWER Agroclimatology (5-Year Historical)",
+  "coordinates": {
+    "latitude": 9.9252,
+    "longitude": 78.1198
+  },
+  "period": "2021 - 2025",
+  "monthly_climate": [
+    {
+      "month_num": 1,
+      "month_name": "Jan",
+      "avg_accumulated_rainfall_mm": 54.0,
+      "avg_temperature_c": 23.6,
+      "avg_humidity_pct": 82.5,
+      "avg_solar_radiation_mj": 16.93,
+      "rainfall_std_dev": 78.4
+    },
+    {
+      "month_num": 2,
+      "month_name": "Feb",
+      "avg_accumulated_rainfall_mm": 8.8,
+      "avg_temperature_c": 25.3,
+      "avg_humidity_pct": 70.7,
+      "avg_solar_radiation_mj": 21.55,
+      "rainfall_std_dev": 6.0
+    },
+    {
+      "month_num": 3,
+      "month_name": "Mar",
+      "avg_accumulated_rainfall_mm": 25.4,
+      "avg_temperature_c": 28.4,
+      "avg_humidity_pct": 61.1,
+      "avg_solar_radiation_mj": 23.04,
+      "rainfall_std_dev": 18.3
+    },
+    {
+      "month_num": 4,
+      "month_name": "Apr",
+      "avg_accumulated_rainfall_mm": 78.0,
+      "avg_temperature_c": 30.1,
+      "avg_humidity_pct": 63.3,
+      "avg_solar_radiation_mj": 22.52,
+      "rainfall_std_dev": 41.8
+    },
+    {
+      "month_num": 5,
+      "month_name": "May",
+      "avg_accumulated_rainfall_mm": 112.2,
+      "avg_temperature_c": 29.5,
+      "avg_humidity_pct": 68.9,
+      "avg_solar_radiation_mj": 20.25,
+      "rainfall_std_dev": 28.9
+    },
+    {
+      "month_num": 6,
+      "month_name": "Jun",
+      "avg_accumulated_rainfall_mm": 69.9,
+      "avg_temperature_c": 28.7,
+      "avg_humidity_pct": 67.8,
+      "avg_solar_radiation_mj": 20.49,
+      "rainfall_std_dev": 27.3
+    },
+    {
+      "month_num": 7,
+      "month_name": "Jul",
+      "avg_accumulated_rainfall_mm": 87.4,
+      "avg_temperature_c": 28.3,
+      "avg_humidity_pct": 65.6,
+      "avg_solar_radiation_mj": 19.47,
+      "rainfall_std_dev": 64.5
+    },
+    {
+      "month_num": 8,
+      "month_name": "Aug",
+      "avg_accumulated_rainfall_mm": 120.3,
+      "avg_temperature_c": 28.2,
+      "avg_humidity_pct": 69.9,
+      "avg_solar_radiation_mj": 20.31,
+      "rainfall_std_dev": 33.0
+    },
+    {
+      "month_num": 9,
+      "month_name": "Sep",
+      "avg_accumulated_rainfall_mm": 106.2,
+      "avg_temperature_c": 28.0,
+      "avg_humidity_pct": 70.9,
+      "avg_solar_radiation_mj": 20.48,
+      "rainfall_std_dev": 62.4
+    },
+    {
+      "month_num": 10,
+      "month_name": "Oct",
+      "avg_accumulated_rainfall_mm": 207.4,
+      "avg_temperature_c": 26.7,
+      "avg_humidity_pct": 80.3,
+      "avg_solar_radiation_mj": 16.92,
+      "rainfall_std_dev": 37.8
+    },
+    {
+      "month_num": 11,
+      "month_name": "Nov",
+      "avg_accumulated_rainfall_mm": 203.1,
+      "avg_temperature_c": 24.9,
+      "avg_humidity_pct": 86.7,
+      "avg_solar_radiation_mj": 14.23,
+      "rainfall_std_dev": 82.5
+    },
+    {
+      "month_num": 12,
+      "month_name": "Dec",
+      "avg_accumulated_rainfall_mm": 96.5,
+      "avg_temperature_c": 23.9,
+      "avg_humidity_pct": 86.3,
+      "avg_solar_radiation_mj": 16.17,
+      "rainfall_std_dev": 46.0
+    }
+  ],
+  "annual_trends": [
+    {
+      "year": 2021,
+      "annual_rainfall_mm": 1401.2,
+      "annual_avg_temp_c": 26.6,
+      "annual_avg_humidity_pct": 75.6
+    },
+    {
+      "year": 2022,
+      "annual_rainfall_mm": 1298.1,
+      "annual_avg_temp_c": 26.6,
+      "annual_avg_humidity_pct": 74.6
+    },
+    {
+      "year": 2023,
+      "annual_rainfall_mm": 1140.6,
+      "annual_avg_temp_c": 27.4,
+      "annual_avg_humidity_pct": 71.3
+    },
+    {
+      "year": 2024,
+      "annual_rainfall_mm": 1058.0,
+      "annual_avg_temp_c": 27.7,
+      "annual_avg_humidity_pct": 71.5
+    },
+    {
+      "year": 2025,
+      "annual_rainfall_mm": 948.0,
+      "annual_avg_temp_c": 27.3,
+      "annual_avg_humidity_pct": 71.3
+    }
+  ],
+  "seasonal_comparison": {
+    "Winter (Jan-Feb)": {
+      "accumulated_rainfall_mm": 62.8,
+      "avg_temp_c": 24.5,
+      "avg_humidity_pct": 76.6
+    },
+    "Summer (Mar-May)": {
+      "accumulated_rainfall_mm": 215.6,
+      "avg_temp_c": 29.3,
+      "avg_humidity_pct": 64.4
+    },
+    "Southwest Monsoon (Jun-Sep)": {
+      "accumulated_rainfall_mm": 383.8,
+      "avg_temp_c": 28.3,
+      "avg_humidity_pct": 68.5
+    },
+    "Northeast Monsoon (Oct-Dec)": {
+      "accumulated_rainfall_mm": 507.0,
+      "avg_temp_c": 25.2,
+      "avg_humidity_pct": 84.4
+    }
+  },
+  "overall_annual_rainfall_mm": 1169.2,
+  "overall_annual_avg_temp_c": 27.1,
+  "last_updated": "2026-11-05 17:54:42"
+}

@@ -198,9 +198,11 @@
       document.querySelectorAll('.tab-btn')[tab === 'register' ? 0 : 1].classList.add('active');
     }
 
+    let phoneVerified = false;
+
     async function verifyPhone() {
       const phone = document.getElementById("phone").value.trim();
-      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid phone number");
+      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid 10-digit phone number");
 
       const verifyBtn = document.querySelector('.verify-text');
       verifyBtn.innerText = "Sending...";
@@ -218,7 +220,10 @@
         verifyBtn.style.pointerEvents = "auto";
 
         if (data.success) {
-          const otp = prompt("✅ OTP sent to " + phone + ". Enter it:");
+          const promptMsg = data.dev_mode 
+            ? `✅ OTP generated (${data.dev_otp}). Enter it to verify:`
+            : `✅ OTP sent to ${phone}. Enter it:`;
+          const otp = prompt(promptMsg);
           if (!otp) return alert("OTP not entered.");
 
           const verifyRes = await fetch("/verify_otp", {
@@ -228,7 +233,14 @@
           });
 
           const result = await verifyRes.json();
-          alert(result.verified ? "✅ OTP verified!" : "❌ Invalid OTP.");
+          if (result.verified) {
+            phoneVerified = true;
+            verifyBtn.innerText = "Verified ✔";
+            verifyBtn.style.color = "#1b5e20";
+            alert("✅ Phone verified successfully!");
+          } else {
+            alert("❌ Invalid OTP: " + (result.error || ""));
+          }
         } else {
           alert("❌ Failed to send OTP: " + (data.error || ""));
         }
@@ -239,7 +251,7 @@
       }
     }
 
-    function registerFarmer() {
+    async function registerFarmer() {
       const name = document.getElementById("name").value.trim();
       const aadhaar = document.getElementById("aadhaar").value.trim();
       const location = document.getElementById("location").value.trim();
@@ -247,25 +259,58 @@
       const password = document.getElementById("password").value;
       const repassword = document.getElementById("repassword").value;
 
-      if (!name || !aadhaar || !location || !phone || !password || !repassword)
-        return alert("⚠️ Please fill in all fields.");
+      if (!name || !location || !phone || !password || !repassword)
+        return alert("⚠️ Please fill in all required fields.");
 
-      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid phone number.");
+      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid 10-digit phone number.");
       if (password !== repassword) return alert("⚠️ Passwords do not match.");
+      if (password.length < 6) return alert("⚠️ Password must be at least 6 characters.");
 
-      // You can send this data to a `/register_farmer` endpoint later
-      alert("🎉 Farmer Registered Successfully!");
+      try {
+        const res = await fetch("/register_farmer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, aadhaar, location, phone, password })
+        });
+
+        const result = await res.json();
+        if (result.success) {
+          alert("🎉 Farmer Registered Successfully! Please login.");
+          switchTab('login');
+          document.getElementById("login-phone").value = phone;
+        } else {
+          alert("❌ Registration failed: " + (result.error || ""));
+        }
+      } catch (err) {
+        alert("❌ Network error: " + err.message);
+      }
     }
 
-    function loginFarmer() {
+    async function loginFarmer() {
       const phone = document.getElementById("login-phone").value.trim();
       const password = document.getElementById("login-password").value;
 
-      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid phone number.");
+      if (!/^\d{10}$/.test(phone)) return alert("⚠️ Invalid 10-digit phone number.");
       if (!password) return alert("⚠️ Enter your password.");
 
-      // You can send this data to a `/login_farmer` endpoint later
-      alert("✅ Logged in successfully!");
+      try {
+        const res = await fetch("/login_farmer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone, password })
+        });
+
+        const result = await res.json();
+        if (result.success) {
+          localStorage.setItem('agriguru_user', JSON.stringify(result.user));
+          alert("✅ Logged in successfully! Redirecting to Advisory Dashboard...");
+          window.location.href = "/chatbot";
+        } else {
+          alert("❌ Login failed: " + (result.error || ""));
+        }
+      } catch (err) {
+        alert("❌ Network error: " + err.message);
+      }
     }
   </script>
 

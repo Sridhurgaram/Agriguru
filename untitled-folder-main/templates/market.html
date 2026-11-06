@@ -82,16 +82,17 @@
 </head>
 <body>
 
-     <video class="video-bg" autoplay muted loop>
-    <source src="static/grass.mp4" type="video/mp4" />
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="{{ url_for('static', filename='grass.mp4') }}" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <div class="container">
     <h1>AgriGuru Market</h1>
-    <p>Choose your role</p>
-    <button class="btn farmer" onclick="location.href='farmer'">Farmer</button>
-    <button class="btn customer" onclick="location.href='customer'">Customer</button>
+    <p>Choose your portal:</p>
+    <button class="btn farmer" onclick="location.href='/farmer'">Farmer Portal</button>
+    <button class="btn customer" onclick="location.href='/customer'">Customer Portal</button>
+    <button class="btn" style="background:#558b2f; margin-top:8px;" onclick="location.href='/chatbot'">Crop Advisory Dashboard</button>
   </div>
 </body>
 </html>

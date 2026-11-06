@@ -194,7 +194,10 @@
       const data = await res.json();
       if (!data.success) return alert("❌ Failed to send OTP: " + (data.error || ""));
 
-      const otp = prompt(`✅ OTP sent to ${phone}. Enter it to continue:`);
+      const promptMsg = data.dev_mode 
+        ? `✅ OTP generated (${data.dev_otp}). Enter it to continue:`
+        : `✅ OTP sent to ${phone}. Enter it to continue:`;
+      const otp = prompt(promptMsg);
       if (!otp) return alert("OTP not entered.");
 
       const verifyRes = await fetch("/verify_otp", {
